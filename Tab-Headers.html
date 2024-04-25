@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tab Headers
+    </title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0;
+      }
+      .tablink {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 1rem;
+        font-size: 1rem;
+        width: 20%;
+      }
+      .tablink:hover {
+        background-color: #777;
+      }
+
+      /* Style the tab content */
+
+      .tabcontent {
+        /* color: white; */
+        display: none;
+        height: 30rem;
+        text-align: center;
+      }
+
+      #London {background-color:red;}
+      #Paris {background-color:green;}
+      #Tokyo {background-color:blue;}
+      #Oslo {background-color:orange;}
+      #Saint-Petersburg {background-color:gray;}
+      
+      #Paris {
+        background-image: url(paris.jpg);
+        background-position: center;
+        background-size: cover;
+      }
+      #London {
+        background-image: url(lond.webp);
+        background-position: bottom;
+        background-size: cover;
+      }
+      #Tokyo {
+        background-image: url(tokyo2.jpg);
+        background-position: center;
+        background-size: cover;
+      }
+      #Oslo {
+        background-image: url(oslo.jpg);
+        background-position: center;
+        background-size: cover;
+      }
+      #Saint-Petersburg  {
+        background-image: url(petersburg.avif);
+        background-position: top;
+        background-size: cover;
+      }
+      #Paris h1,
+      #Paris p,
+      #London h1,
+      #London p,
+      #Tokyo h1,
+      #Tokyo p,
+      #Oslo h1,
+      #Oslo p,
+      #Saint-Petersburg h1,
+      #Saint-Petersburg p  {
+        background-color: rgb(255, 255, 255, 0.6);
+        margin: 0;
+      }
+      #Paris p,
+      #London p,
+      #Tokyo p,
+      #Oslo p,
+      #Saint-Petersburg p {
+        padding-bottom: 1rem;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      #Paris h1,
+      #London h1,
+      #Tokyo h1,
+      #Oslo h1,
+      #Saint-Petersburg h1 {
+        margin: 0;
+        padding-bottom: 1rem;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div id="London" id="defaultOpen" class="tabcontent">
+      <h1>London</h1>
+      <p>
+        London is the capital city of the United Kingdom. It is the U.K.'s largest metropolis and its economic, transportation, and cultural centre. London is also among the oldest of the world's great cities, with its history spanning nearly two millennia.
+      </p>
+    </div>
+
+    <div id="Paris" class="tabcontent">
+      <h1>Paris</h1>
+      <p>
+        Paris (nicknamed the "City of light") is the capital city of France, and the largest city in France.Paris is known for its gorgeous, imposing monuments. These iconic structures, often an exemplar of a particular era in architecture, are one of the city's instantly recognizable elements. The preeminent of Paris's landmarks is the Eiffel Tower.
+
+      </p>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+      <h1>Tokyo</h1>
+      <p>
+        Tokyo is the administrative, cultural, financial, commercial, and educational centre of Japan and the focus of an extensive urban complex that includes Kawasaki and Yokohama. Attractions include the Imperial Palace, encircled by stone-walled moats and broad gardens, and numerous temples and shrines.
+      </p>
+    </div>
+
+    <div id="Oslo" class="tabcontent">
+      <h1>Oslo</h1>
+      <p>
+        Oslo is the economic and governmental centre of Norway. The city is also a hub of Norwegian trade, banking, industry and shipping. It is an important centre for maritime industries and maritime trade in Europe. The city is beautifully located by the Oslo fjord, with scenic islands and an extensive waterfront.
+        Green, forested hills surround the city – popular recreation areas.
+
+      </p>
+    </div>
+
+    <div id="Saint-Petersburg" class="tabcontent">
+      <h1>Saint Petersburg</h1>
+      <p>
+        St. Petersburg is a mecca of cultural, historical, and architectural landmarks. Founded by Tsar Peter I (the Great) as Russia's “window on Europe,” it bears the unofficial status of Russia's cultural capital and most European city, a distinction that it strives to retain in its perennial competition with Moscow. It is elusive and enigmatic, a truly unique city in Russia's history.
+      </p>
+    </div>
+
+    <button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">London</button>
+
+    <button class="tablink" onclick="openCity('Paris', this, 'green')">Paris</button>
+
+    <button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
+
+    <button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
+
+    <button class="tablink" onclick="openCity('Saint-Petersburg', this, 'gray')">Saint Petersburg</button>
+
+
+    <script>
+      function openCity(cityName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(cityName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+      
+      }
+
+     // Get the element with id="defaultOpen" and click on it -->
+      document.getElementById("defaultOpen").click();
+   
+    </script>
+
+  </body>
+</html>
+
+<!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tab_header -->
